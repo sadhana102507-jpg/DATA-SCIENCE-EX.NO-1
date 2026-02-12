@@ -191,7 +191,33 @@ print(IQR)
 <img width="122" height="33" alt="image" src="https://github.com/user-attachments/assets/bba62868-365c-4ea6-84a8-a956255ad2b2" />
 
 ```
+ran=ir[((ir.num_episodes<(Q1-1.5*IQR))|(ir.num_episodes>(Q3+1.5*IQR)))]
+ran['num_episodes']
+```
+
+<img width="411" height="286" alt="image" src="https://github.com/user-attachments/assets/bf230755-e190-46cd-8529-197bcb4054a4" />
 
 ```
+sns.boxplot(x='num_episodes',data=ran)
+```
+
+<img width="704" height="581" alt="image" src="https://github.com/user-attachments/assets/a235904e-8f65-4bba-acb1-f0bb101caaed" />
+
+```
+import numpy as np
+import scipy.stats as stats
+z=np.abs(stats.zscore(ir['lifetime_popularity_rank']))
+z
+```
+<img width="653" height="437" alt="image" src="https://github.com/user-attachments/assets/6d5fc47e-babf-4ce2-aa9c-bdb7e424ae0b" />
+
+```
+ir1=ir[z<3]
+ir1
+```
+
+<img width="1366" height="498" alt="image" src="https://github.com/user-attachments/assets/e58285a2-2de7-4f76-b906-50788a56bd71" />
+
 # Result
-          <<include your Result here>>
+Thus the given data successfully performed data cleaning and saved the cleaned data to a file
+
